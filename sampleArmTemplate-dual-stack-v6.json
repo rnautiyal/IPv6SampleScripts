@@ -13,12 +13,12 @@
     "defaultValue": "[utcNow('MMddHHmmss')]",
     "type": "String"
     },
-    "publicIPAddresses_aliajipv4_name": {
-      "defaultValue": "[format('{0}{1}', 'aliajipv4', parameters('utcTime'))]",
+    "publicIPAddresses_appgwipv4_name": {
+      "defaultValue": "[format('{0}{1}', 'appgwipv4', parameters('utcTime'))]",
       "type": "String"
     },
-    "publicIPAddresses_aliajipv6_name": {
-      "defaultValue": "[format('{0}{1}', 'aliajipv6', parameters('utcTime'))]",
+    "publicIPAddresses_appgwipv6_name": {
+      "defaultValue": "[format('{0}{1}', 'appgwipv6', parameters('utcTime'))]",
       "type": "String"
     },
         "staticPrivateIPv6": {
@@ -59,8 +59,8 @@
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "domainNameLabel": "[format('{0}{1}', parameters('publicIPAddresses_aliajipv4_name'), range(0, 1)[copyIndex()])]",
-                    "fqdn": "[concat(format('{0}{1}', parameters('publicIPAddresses_aliajipv4_name'), range(0, 1)[copyIndex()]), '.centraluseuap.cloudapp.azure.com')]"
+                    "domainNameLabel": "[format('{0}{1}', parameters('publicIPAddresses_appgwipv4_name'), range(0, 1)[copyIndex()])]",
+                    "fqdn": "[concat(format('{0}{1}', parameters('publicIPAddresses_appgwipv4_name'), range(0, 1)[copyIndex()]), '.centraluseuap.cloudapp.azure.com')]"
                 }
             },
             "copy": {
@@ -81,8 +81,8 @@
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "domainNameLabel": "[format('{0}{1}', parameters('publicIPAddresses_aliajipv6_name'), range(0, 1)[copyIndex()])]",
-                    "fqdn": "[concat(format('{0}{1}', parameters('publicIPAddresses_aliajipv6_name'), range(0, 1)[copyIndex()]), '.centraluseuap.cloudapp.azure.com')]"
+                    "domainNameLabel": "[format('{0}{1}', parameters('publicIPAddresses_appgwipv6_name'), range(0, 1)[copyIndex()])]",
+                    "fqdn": "[concat(format('{0}{1}', parameters('publicIPAddresses_appgwipv6_name'), range(0, 1)[copyIndex()]), '.centraluseuap.cloudapp.azure.com')]"
                 }
             },
             "copy": {
